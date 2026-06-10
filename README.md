@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bartosz Wójtowicz - Personal Portfolio 🚀
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-First, run the development server:
+Oficjalne portfolio i wizytówka dewelopera, dostępna pod adresem [bartoszwojtowicz.pl](https://bartoszwojtowicz.pl).
+
+## 💡 O projekcie
+Jest to nowoczesne portfolio jednostronicowe (One-Page) stworzone z naciskiem na najwyższą wydajność, architekturę Serverless/Edge oraz "Pro-Level UI" w oparciu o estetykę Glassmorphism (ciemny motyw). Projekt ma za zadanie zaprezentowanie ponad 15-letniego doświadczenia łączącego analitykę, optymalizację i budowanie skalowalnych aplikacji webowych. Został napisany w najnowszym silniku *Next.js App Router* i korzysta z frameworka *Tailwind CSS v4*.
+
+## 🛠️ Stack Technologiczny
+* **Framework:** Next.js 15
+* **Język:** TypeScript (Strict Mode)
+* **Styling:** Tailwind CSS v4 + Framer Motion
+* **Ikony:** Lucide React
+* **Wdrażanie:** Vercel (CI/CD z GitHuba)
+
+## 💻 Uruchomienie lokalne
+Aby przetestować projekt lokalnie, sklonuj to repozytorium i użyj menedżera pakietów `npm`:
 
 ```bash
+# Sklonuj repozytorium
+git clone http://github.com/nNevermore/bartosz-wojtowicz.pl.git
+
+# Wejdź do katalogu
+cd bartoszwojtowicz.pl
+
+# Zainstaluj zależności
+npm install
+
+# Uruchom serwer deweloperski
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aplikacja będzie działać pod adresem: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 SEO & Performance
+Portfolio jest w 100% zoptymalizowane pod kątem SEO. Wykorzystuje zaawansowane metatagi, specyfikację OpenGraph, oraz renderowanie obrazów przez `next/image`, co zapewnia perfekcyjne wczytywanie strony i wyniki w metrykach Core Web Vitals. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Zakodowano z 💻 i 🏃 maratońską dyscypliną.*
