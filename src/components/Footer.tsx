@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="py-12 border-t border-white/5 mt-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl flex flex-col items-center">
         <div className="flex items-center gap-6 mb-8">
-          <a href="https://github.com/nNevermore" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
+          <a href="https://github.com/nNevermore" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profil" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
             <FaGithub size={20} />
           </a>
-          {/* <a href="https://linkedin.com/in/TwojProfilLinkedin" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
+          <a href="https://www.linkedin.com/in/bartosz-w%C3%B3jtowicz-9b66a2415/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profil" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
             <FaLinkedin size={20} />
-          </a> */}
-          <a href="mailto:kontakt@bartoszwojtowicz.pl" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
+          </a>
+          <a href="mailto:kontakt@bartoszwojtowicz.pl" aria-label="Wyślij Email" className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all">
             <Mail size={20} />
           </a>
         </div>

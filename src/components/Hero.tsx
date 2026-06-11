@@ -18,7 +18,7 @@ export default function Hero() {
               Frontend & Fullstack Developer. Od portali społecznościowych, przez automatyzację w grach, aż po wielodomenowe aplikacje e-commerce z Edge Runtime. 15 lat pasji przekuwam w profesjonalny kod.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-              <a href="#projekty" className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">
+              <a href="#projekty" className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-slate-900 font-semibold hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">
                 Zobacz projekty
                 <ArrowRight size={18} />
               </a>
