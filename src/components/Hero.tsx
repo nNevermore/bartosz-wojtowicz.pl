@@ -39,6 +39,7 @@ export default function Hero() {
                   sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 400px"
                   className="object-cover object-top scale-105"
                   priority
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute -bottom-2 -right-2 glass-panel px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3 shadow-2xl border-white/20">
