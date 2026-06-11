@@ -78,7 +78,7 @@ export default function Experience() {
                         src={project.image}
                         alt={project.title}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 66vw"
+                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 66vw"
                         priority={project.id === 'tft-boost'}
                         className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
