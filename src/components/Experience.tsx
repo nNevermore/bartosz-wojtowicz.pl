@@ -6,8 +6,8 @@ const projects = [
     year: '2025-2026',
     title: 'TFT-Boost.net (Next.js E-commerce)',
     role: 'Founder & Fullstack Developer',
-    description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router), dostępna na domenach .net, .pl, .fr, .de. Wdrożenie Edge Runtime z własnym, bezskryptowym systemem śledzenia telemetrii na brzegu sieci (Edge Beacon Tracking). Wykorzystanie Turso i Supabase do optymalnego zarządzania danymi.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Redux', 'i18n'],
+    description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router), dostępna na domenach .net, .pl, .fr, .de. Wykorzystanie Turso i Supabase do optymalnego zarządzania danymi.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Next-Auth', 'Drizzle ORM', 'Stripe', 'Redux', 'i18n'],
     image: '/images/tft-boost-net.png',
   },
   {
