@@ -36,6 +36,7 @@ export default function Hero() {
                   src="/images/profilowe.jpg"
                   alt="Bartosz Wójtowicz"
                   fill
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 400px"
                   className="object-cover object-top scale-105"
                   priority
                 />
