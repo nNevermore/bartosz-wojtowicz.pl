@@ -8,14 +8,14 @@ export default function Hero() {
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
           <div className="flex-1 space-y-8 text-center lg:text-left">
             <div className="inline-block px-4 py-1.5 rounded-full glass-panel text-sm font-medium text-primary mb-2">
-              Gotowy na nowe wyzwania (Fullstack Developer)
+              Gotowy na nowe wyzwania (QA / Fullstack Developer)
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground">
               Cześć, jestem <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-purple-500">Bartosz Wójtowicz</span>.
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0">
-              Frontend & Fullstack Developer. Od portali społecznościowych, przez automatyzację w grach, aż po wielodomenowe aplikacje e-commerce z Edge Runtime. 15 lat pasji przekuwam w profesjonalny kod.
+              Frontend & Fullstack Developer. Od portali społecznościowych, przez automatyzację w grach, aż po wielodomenowe aplikacje e-commerce. Wieloletnią pasję przekuwam w profesjonalny kod i dbałość o najwyższą jakość oprogramowania.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <a href="#projekty" className="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-slate-900 font-semibold hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">

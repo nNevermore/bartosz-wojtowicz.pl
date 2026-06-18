@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     url: "https://bartoszwojtowicz.pl",
     title: "Bartosz Wójtowicz | Frontend & Fullstack Developer",
-    description: "15 lat doświadczenia: od systemów e-commerce po zaawansowaną analitykę danych. Zobacz moje projekty.",
+    description: "Wieloletnie doświadczenie: od systemów e-commerce po zaawansowaną analitykę danych. Zobacz moje projekty.",
     siteName: "Bartosz Wójtowicz Portfolio",
   },
   twitter: {
