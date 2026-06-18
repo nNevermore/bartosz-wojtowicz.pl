@@ -6,7 +6,7 @@ const projects = [
     year: '2025-2026',
     title: 'TFT-Boost.net (Next.js E-commerce)',
     role: 'Founder & Fullstack Developer',
-    description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router). Wykorzystanie Turso i Supabase. Szczególny nacisk na niezawodność, testowanie interfejsu (UX/UI) oraz wsparcie użytkowników podczas onboardingu.',
+    description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router). Wykorzystanie Turso i Supabase. Szczególny nacisk na nowoczesny stack (React, TypeScript), architekturę opartą na reużywalnych komponentach oraz wydajność interfejsu (UX/UI).',
     tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Next-Auth', 'Drizzle ORM', 'Stripe', 'Redux', 'i18n'],
     image: '/images/tft-boost-net.png',
   },
@@ -33,7 +33,7 @@ const projects = [
     year: '2016-2020',
     title: 'Heroes Online Wiki (elrath.pl)',
     role: 'Founder & Creator & Admin',
-    description: 'Portal skupiający społeczność graczy Heroes Online. Nadzór nad prawidłowym działaniem systemu, manualne testowanie funkcjonalności po aktualizacjach oraz utrzymanie stabilnego ruchu na poziomie ponad 900 użytkowników dziennie.',
+    description: 'Portal skupiający społeczność graczy Heroes Online. Nadzór nad prawidłowym działaniem frontendu, systematyczna przebudowa interfejsu z naciskiem na responsywność oraz utrzymanie stabilnego ruchu na poziomie ponad 900 użytkowników dziennie.',
     tech: ['PHP', 'Joomla', 'MySQL', 'Community Management'],
     image: '/images/elrath_pl.jpg',
   }
