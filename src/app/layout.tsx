@@ -37,6 +37,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
           fetchPriority="high"
         />
+        <link
+          rel="preload"
+          href="/fonts/geist-mono-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+          fetchPriority="high"
+        />
       </head>
       <body className="min-h-screen text-foreground selection:bg-primary/30 selection:text-white">
         {children}
