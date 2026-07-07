@@ -15,12 +15,12 @@
 }
 
 @theme {
-  --color-background: #0f1117;
+  --color-background: #08090d;
   --color-foreground: #f8fafc;
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-glass: rgba(255, 255, 255, 0.03);
-  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-glass: rgba(255, 255, 255, 0.015);
+  --color-glass-border: rgba(255, 255, 255, 0.05);
 
   --font-sans: 'Geist', Arial, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
@@ -36,15 +36,19 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 40%),
-    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 40%);
-  background-attachment: fixed;
+    radial-gradient(ellipse 60% 50% at 50% -10%, rgba(16, 185, 129, 0.07), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-attachment: scroll, fixed, fixed;
   min-height: 100vh;
 }
 
 .glass-panel {
   background-color: var(--color-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
+

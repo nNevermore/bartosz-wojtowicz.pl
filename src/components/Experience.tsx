@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Terminal } from 'lucide-react';
 
 const projects = [
   {
@@ -7,7 +8,7 @@ const projects = [
     title: 'TFT-Boost.net (Next.js E-commerce)',
     role: 'Founder & Fullstack Developer',
     description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router). Wykorzystanie Turso i Supabase. Szczególny nacisk na nowoczesny stack (React, TypeScript), architekturę opartą na reużywalnych komponentach oraz wydajność interfejsu (UX/UI).',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Next-Auth', 'Drizzle ORM', 'Stripe', 'Redux', 'i18n'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Stripe', 'Redux'],
     image: '/images/tft-boost-net.png',
   },
   {
@@ -15,7 +16,7 @@ const projects = [
     year: '2019-2025',
     title: 'BoostTFT.pl (GatsbyJS)',
     role: 'Founder & Frontend Developer',
-    description: 'Poprzednia iteracja systemu e-commerce oparta o potężne środowisko SSG (Static Site Generation). Główny poligon doświadczalny rozwoju platformy od strony GraphQL oraz TypeScript. Własny, autorski projekt rozwijany latami i udoskonalany ze wzrostem moich kompetencji.',
+    description: 'Poprzednia iteracja systemu e-commerce oparta o potężne środowisko SSG (Static Site Generation). Główny poligon doświadczalny rozwoju platformy od strony GraphQL oraz TypeScript. Własny, autorski projekt rozwijany latami.',
     tech: ['GatsbyJS', 'React', 'TypeScript', 'GraphQL'],
     image: '/images/boosttft-pl.png',
   },
@@ -25,7 +26,7 @@ const projects = [
     title: 'Path of Exile Trade Automation',
     role: 'Data Automation Developer',
     description: 'Skrypty do web scrapingu cen w grze z wykorzystaniem Pythona i serwera Node.js. Skrypt asynchronicznie procesował rynkowe zmiany cen, budując natychmiastową przewagę w handlu wewnątrz gry.',
-    tech: ['Node.js', 'Python', 'Web Scraping', 'Asynchronous JS'],
+    tech: ['Node.js', 'Python', 'Web Scraping', 'Async JS'],
     image: null,
   },
   {
@@ -33,63 +34,139 @@ const projects = [
     year: '2016-2020',
     title: 'Heroes Online Wiki (elrath.pl)',
     role: 'Founder & Creator & Admin',
-    description: 'Portal skupiający społeczność graczy Heroes Online. Nadzór nad prawidłowym działaniem frontendu, systematyczna przebudowa interfejsu z naciskiem na responsywność oraz utrzymanie stabilnego ruchu na poziomie ponad 900 użytkowników dziennie.',
-    tech: ['PHP', 'Joomla', 'MySQL', 'Community Management'],
+    description: 'Portal skupiający społeczność graczy Heroes Online. Nadzór nad prawidłowym działaniem frontendu, systematyczna przebudowa interfejsu z naciskiem na responsywność oraz utrzymanie stabilnego ruchu.',
+    tech: ['PHP', 'Joomla', 'MySQL', 'Community'],
     image: '/images/elrath_pl.jpg',
   }
 ];
 
 export default function Experience() {
+  const featuredProject = projects.find(p => p.id === 'tft-boost')!;
+  const gridProjects = projects.filter(p => p.id !== 'tft-boost');
+
   return (
     <section id="projekty" className="py-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Główne <span className="text-primary">Projekty</span></h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Wybór projektów, które pokazują moje zdolności od budowania zaangażowania użytkowników, przez złożoną analitykę w grach, aż do nowoczesnego e-commerce i środowisk SSG.
+        <div className="text-center mb-16 space-y-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+            Główne <span className="text-primary">Projekty</span>
+          </h2>
+          <p className="text-slate-400 max-w-xl mx-auto text-[15px] leading-relaxed">
+            Projekty własne i komercyjne od nowoczesnego e-commerce z architekturą Serverless po automatyzację danych i wiki dla społeczności.
           </p>
         </div>
 
-        <div className="space-y-12">
-          {projects.map((project) => (
-            <div key={project.id} className="glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="space-y-8">
+          {/* Featured Project - Full Width */}
+          <div className="glass-panel p-6 md:p-10 rounded-3xl relative overflow-hidden group hover:border-primary/20 hover:bg-white/[0.01] transition-all duration-300">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10">
-                <div className={`${project.image ? 'lg:w-1/3' : 'w-full'} flex flex-col justify-center`}>
-                  <div className="text-primary font-mono text-sm mb-2">{project.year}</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                  <div className="text-slate-400 font-medium mb-4">{project.role}</div>
-                  <p className="text-slate-300 mb-6 leading-relaxed">{project.description}</p>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10 items-center">
+              <div className="lg:w-1/2 space-y-5">
+                <div className="flex items-center gap-3">
+                  <span className="text-primary font-mono text-xs font-semibold uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full border border-primary/25">
+                    {featuredProject.year}
+                  </span>
+                  <span className="text-slate-400 text-xs font-medium uppercase tracking-wider">
+                    Featured Project
+                  </span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">{featuredProject.title}</h3>
+                <div className="text-slate-400 font-medium text-sm">{featuredProject.role}</div>
+                <p className="text-slate-400 leading-relaxed text-[15px]">{featuredProject.description}</p>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-slate-300">
-                        {tech}
-                      </span>
-                    ))}
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {featuredProject.tech.map((tech) => (
+                    <span key={tech} className="px-3 py-1 text-xs font-medium bg-white/[0.04] border border-white/5 rounded-lg text-slate-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {featuredProject.image && (
+                <div className="lg:w-1/2 w-full">
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/5 group-hover:border-primary/20 transition-all duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
+                    <Image
+                      src={featuredProject.image}
+                      alt={featuredProject.title}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 45vw"
+                      priority
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-103"
+                    />
                   </div>
                 </div>
+              )}
+            </div>
+          </div>
 
-                {project.image && (
-                  <div className="lg:w-2/3">
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-primary/30 transition-colors">
+          {/* Grid Projects - Asymmetric Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {gridProjects.map((project) => (
+              <div 
+                key={project.id} 
+                className="glass-panel p-6 rounded-3xl flex flex-col justify-between group hover:border-primary/20 hover:bg-white/[0.01] transition-all duration-300"
+              >
+                <div className="space-y-4">
+                  {project.image ? (
+                    <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/5 group-hover:border-primary/10 transition-all duration-500 shadow-md mb-4">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        sizes="(max-width: 768px) 80vw, (max-width: 1024px) 70vw, 50vw"
-                        priority={project.id === 'tft-boost'}
-                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102"
                       />
                     </div>
+                  ) : (
+                    /* Terminal Visualizer mock for POE automation project */
+                    <div className="bg-black/40 rounded-xl p-4 font-mono text-[10px] text-primary/80 border border-primary/10 h-40 overflow-hidden flex flex-col justify-between mb-4 select-none">
+                      <div>
+                        <div className="flex items-center gap-1.5 text-slate-500 border-b border-white/5 pb-1.5 mb-2">
+                          <Terminal size={12} strokeWidth={2} />
+                          <span>poe_scanner.py</span>
+                        </div>
+                        <span className="text-slate-500">// Path of Exile Trade Scanner</span>
+                        <br />
+                        <span className="text-slate-300">def</span> <span className="text-white">scan_margins</span>():
+                        <br />
+                        <span className="pl-4 text-slate-400">prices = api.get_live_rates()</span>
+                        <br />
+                        <span className="pl-4 text-emerald-400">if margin &gt; 15.0: alert(margin)</span>
+                      </div>
+                      <div className="text-[9px] text-slate-500 flex justify-between border-t border-white/5 pt-1.5">
+                        <span>STATUS: ACTIVE</span>
+                        <span>ASYNC POOL: OK</span>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-primary font-mono text-[10px] font-semibold uppercase tracking-wider bg-primary/10 px-2 py-0.5 rounded border border-primary/25">
+                        {project.year}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-bold text-white tracking-tight">{project.title}</h4>
+                    <p className="text-xs text-slate-400 font-semibold">{project.role}</p>
+                    <p className="text-sm text-slate-400 leading-relaxed line-clamp-4">{project.description}</p>
                   </div>
-                )}
+                </div>
+
+                <div className="flex flex-wrap gap-1.5 pt-5 mt-auto">
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="px-2.5 py-0.5 text-[11px] font-medium bg-white/[0.03] border border-white/5 rounded-md text-slate-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

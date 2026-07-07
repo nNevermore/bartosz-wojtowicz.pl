@@ -1,52 +1,54 @@
 import Image from 'next/image';
-import { Trophy, Activity, Dumbbell } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 export default function Hobby() {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <div className="relative w-full aspect-4/3 rounded-3xl overflow-hidden glass-panel border-white/10 group shadow-2xl">
+            <div className="relative w-full aspect-4/3 rounded-3xl overflow-hidden glass-panel border border-white/5 group shadow-2xl">
               <Image
                 src="/images/bieg_czestochowski.png"
                 alt="Wynik Bieg Częstochowski"
                 fill
                 sizes="(max-width: 768px) 80vw, (max-width: 1024px) 45vw, 600px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-102"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary backdrop-blur-md">
-                    <Trophy size={20} />
+              <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/10 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between bg-black/60 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                    <Trophy size={18} strokeWidth={2} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Bieg Częstochowski 10km</h3>
+                  <div>
+                    <h3 className="text-sm font-semibold text-white tracking-tight">Bieg Częstochowski 10km</h3>
+                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider mt-0.5">Czas netto</p>
+                  </div>
                 </div>
-                <p className="text-3xl font-mono text-primary font-bold">00:43:26</p>
+                <div className="text-2xl font-mono text-primary font-bold tracking-tight">00:43:26</div>
               </div>
             </div>
           </div>
 
           <div className="order-1 lg:order-2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Kodowanie to <span className="text-primary">maraton</span>.</h2>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              Zarówno w IT, jak i w życiu prywatnym cenię dyscyplinę, systematyczność i długoterminowe cele. Ponad 100 ukończonych biegów w ramach parkrun oraz regularne starty na 10 km (czas netto 43:26) nauczyły mnie, że najlepsze rezultaty przychodzą dzięki wytrwałości i ciągłej optymalizacji - tak w biegu, jak i w kodzie.
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
+              Kodowanie to <span className="text-primary">maraton</span>.
+            </h2>
+            <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-[60ch]">
+              Zarówno w IT, jak i w życiu prywatnym cenię dyscyplinę, systematyczność i długoterminowe cele. Ponad 100 ukończonych biegów w ramach parkrun oraz regularne starty na 10 km nauczyły mnie, że najlepsze rezultaty przychodzą dzięki wytrwałości i ciągłej optymalizacji - tak w biegu, jak i w kodzie.
             </p>
-            <div className="flex gap-6 pt-4">
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2 text-white font-medium">
-                  <Activity size={18} className="text-primary" />
-                  Bieganie
-                </div>
-                <span className="text-sm text-slate-400">100+ parkrunów</span>
+            
+            <div className="grid grid-cols-2 gap-8 border-t border-white/5 pt-8 mt-4">
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Bieganie</span>
+                <h4 className="text-lg font-bold text-white">100+ parkrunów</h4>
+                <p className="text-xs text-slate-400 leading-normal">Regularna praca nad wytrzymałością i dyscypliną.</p>
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2 text-white font-medium">
-                  <Dumbbell size={18} className="text-primary" />
-                  Siłownia & Pływanie
-                </div>
-                <span className="text-sm text-slate-400">Balans do pracy przy komputerze</span>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Regeneracja</span>
+                <h4 className="text-lg font-bold text-white">Siłownia & Pływanie</h4>
+                <p className="text-xs text-slate-400 leading-normal">Zdrowy balans dla umysłu i ciała po pracy przy biurku.</p>
               </div>
             </div>
           </div>
@@ -55,3 +57,4 @@ export default function Hobby() {
     </section>
   );
 }
+
