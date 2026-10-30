@@ -1,22 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import { Terminal } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const projects = [
-  {
-    id: 'tft-boost',
-    year: '2025-2026',
-    title: 'TFT-Boost.net (Next.js E-commerce)',
-    role: 'Founder & Fullstack Developer',
-    description: 'Wielodomenowa aplikacja e-commerce oparta na Next.js (App Router). Wykorzystanie Turso i Supabase. Szczególny nacisk na nowoczesny stack (React, TypeScript), architekturę opartą na reużywalnych komponentach oraz wydajność interfejsu (UX/UI).',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Turso', 'Supabase', 'Stripe', 'Redux'],
-    image: '/images/tft-boost-net.png',
-  },
   {
     id: 'boosttft',
     year: '2019-2025',
     title: 'BoostTFT.pl (GatsbyJS)',
     role: 'Founder & Frontend Developer',
-    description: 'Poprzednia iteracja systemu e-commerce oparta o potężne środowisko SSG (Static Site Generation). Główny poligon doświadczalny rozwoju platformy od strony GraphQL oraz TypeScript. Własny, autorski projekt rozwijany latami.',
+    description: 'Autorski system e-commerce oparty o potężne środowisko SSG (Static Site Generation). Główny poligon doświadczalny rozwoju platformy od strony GraphQL oraz TypeScript. Własny projekt rozwijany latami.',
     tech: ['GatsbyJS', 'React', 'TypeScript', 'GraphQL'],
     image: '/images/boosttft-pl.png',
   },
@@ -41,24 +35,57 @@ const projects = [
 ];
 
 export default function Experience() {
-  const featuredProject = projects.find(p => p.id === 'tft-boost')!;
-  const gridProjects = projects.filter(p => p.id !== 'tft-boost');
+  const featuredProject = projects[0];
+  const gridProjects = projects.slice(1);
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
 
   return (
     <section id="projekty" className="py-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="text-center mb-16 space-y-3">
+        <motion.div 
+          className="text-center mb-16 space-y-3"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
             Główne <span className="text-primary">Projekty</span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-[15px] leading-relaxed">
-            Projekty własne i komercyjne od nowoczesnego e-commerce z architekturą Serverless po automatyzację danych i wiki dla społeczności.
+            Projekty własne i komercyjne – od nowoczesnego e-commerce po automatyzację danych i wiki dla społeczności.
           </p>
-        </div>
+        </motion.div>
 
         <div className="space-y-8">
           {/* Featured Project - Full Width */}
-          <div className="glass-panel p-6 md:p-10 rounded-3xl relative overflow-hidden group hover:border-primary/20 hover:bg-white/[0.01] transition-all duration-300">
+          <motion.div 
+            className="glass-panel p-6 md:p-10 rounded-3xl relative overflow-hidden group hover:border-primary/20 hover:bg-white/[0.01] transition-all duration-300"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+          >
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10 items-center">
@@ -99,13 +126,20 @@ export default function Experience() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Grid Projects - Asymmetric Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Grid Projects - 2 Column Grid */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {gridProjects.map((project) => (
-              <div 
+              <motion.div 
                 key={project.id} 
+                variants={itemVariants}
                 className="glass-panel p-6 rounded-3xl flex flex-col justify-between group hover:border-primary/20 hover:bg-white/[0.01] transition-all duration-300"
               >
                 <div className="space-y-4">
@@ -133,7 +167,7 @@ export default function Experience() {
                         <br />
                         <span className="pl-4 text-slate-400">prices = api.get_live_rates()</span>
                         <br />
-                        <span className="pl-4 text-emerald-400">if margin &gt; 15.0: alert(margin)</span>
+                        <span className="pl-4 text-primary">if margin &gt; 15.0: alert(margin)</span>
                       </div>
                       <div className="text-[9px] text-slate-500 flex justify-between border-t border-white/5 pt-1.5">
                         <span>STATUS: ACTIVE</span>
@@ -161,9 +195,9 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

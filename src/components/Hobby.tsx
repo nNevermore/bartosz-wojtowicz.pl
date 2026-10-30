@@ -1,12 +1,42 @@
+"use client";
+
 import Image from 'next/image';
 import { Trophy } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hobby() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="order-2 lg:order-1">
+          <motion.div 
+            className="order-2 lg:order-1"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+          >
             <div className="relative w-full aspect-4/3 rounded-3xl overflow-hidden glass-panel border border-white/5 group shadow-2xl">
               <Image
                 src="/images/bieg_czestochowski.png"
@@ -29,17 +59,32 @@ export default function Hobby() {
                 <div className="text-2xl font-mono text-primary font-bold tracking-tight">00:43:26</div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="order-1 lg:order-2 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
+          <motion.div 
+            className="order-1 lg:order-2 space-y-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h2 
+              className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight"
+              variants={itemVariants}
+            >
               Kodowanie to <span className="text-primary">maraton</span>.
-            </h2>
-            <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-[60ch]">
+            </motion.h2>
+            <motion.p 
+              className="text-slate-400 text-base md:text-lg leading-relaxed max-w-[60ch]"
+              variants={itemVariants}
+            >
               Zarówno w IT, jak i w życiu prywatnym cenię dyscyplinę, systematyczność i długoterminowe cele. Ponad 100 ukończonych biegów w ramach parkrun oraz regularne starty na 10 km nauczyły mnie, że najlepsze rezultaty przychodzą dzięki wytrwałości i ciągłej optymalizacji - tak w biegu, jak i w kodzie.
-            </p>
+            </motion.p>
             
-            <div className="grid grid-cols-2 gap-8 border-t border-white/5 pt-8 mt-4">
+            <motion.div 
+              className="grid grid-cols-2 gap-8 border-t border-white/5 pt-8 mt-4"
+              variants={itemVariants}
+            >
               <div className="space-y-1.5">
                 <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Bieganie</span>
                 <h4 className="text-lg font-bold text-white">100+ parkrunów</h4>
@@ -50,11 +95,12 @@ export default function Hobby() {
                 <h4 className="text-lg font-bold text-white">Siłownia & Pływanie</h4>
                 <p className="text-xs text-slate-400 leading-normal">Zdrowy balans dla umysłu i ciała po pracy przy biurku.</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
 
